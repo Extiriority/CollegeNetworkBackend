@@ -1,0 +1,2 @@
+﻿FROM postgres:13.4-alpine
+ENV POSTGRES_PASSWORD 12345
