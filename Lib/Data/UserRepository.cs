@@ -1,5 +1,4 @@
-﻿using System;
-using System.Linq;
+﻿using System.Linq;
 using CollegeNetworkBackend1.Lib.Logic.User;
 
 namespace CollegeNetworkBackend1.Lib.Data
@@ -12,22 +11,18 @@ namespace CollegeNetworkBackend1.Lib.Data
         {
             _context = context;
         }
-        
-        public User create(User user)
-        {
+
+        public User create(User user) {
             _context.users.Add(user);
             user.id = _context.SaveChanges();
-
             return user;
         }
 
-        public User getByEmail(string email)
-        {
+        public User getByEmail(string email) {
             return _context.users.FirstOrDefault(u => u.email == email);
         }
 
-        public User getById(int id)
-        {
+        public User getById(int id) {
             return _context.users.FirstOrDefault(u => u.id == id);
         }
     }

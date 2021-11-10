@@ -72,7 +72,7 @@ namespace CollegeNetworkBackend1.Controllers
 
                 return Ok(user);
             }
-            catch (Exception e)
+            catch (Exception _)
             {
                 return Unauthorized();
             }

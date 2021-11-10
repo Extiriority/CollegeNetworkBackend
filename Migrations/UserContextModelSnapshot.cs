@@ -19,7 +19,7 @@ namespace CollegeNetworkBackend1.Migrations
                 .HasAnnotation("ProductVersion", "3.1.10")
                 .HasAnnotation("Relational:MaxIdentifierLength", 63);
 
-            modelBuilder.Entity("CollegeNetworkBackend1.Lib.Logic.User.User", b =>
+            modelBuilder.Entity("CollegeNetworkBackend.Lib.Logic.User.User", b =>
                 {
                     b.Property<int>("id")
                         .ValueGeneratedOnAdd()
