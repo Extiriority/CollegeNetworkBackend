@@ -22,8 +22,7 @@ namespace CollegeNetworkBackend1.Helpers
             var tokenHandler = new JwtSecurityTokenHandler();
             var key = Encoding.ASCII.GetBytes(secureKey);
             
-            tokenHandler.ValidateToken(jwt, new TokenValidationParameters
-            {
+            tokenHandler.ValidateToken(jwt, new TokenValidationParameters {
                 IssuerSigningKey = new SymmetricSecurityKey(key),
                 ValidateIssuerSigningKey = true,
                 ValidateIssuer = false,
