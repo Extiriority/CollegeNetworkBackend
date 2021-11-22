@@ -8,8 +8,7 @@ namespace CollegeNetworkBackend1.Helpers
     public class JwtService
     {
         private string secureKey = "this is a very secure key";
-        public string generate(int id)
-        {
+        public string generate(int id) {
             var symmetricSecurityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(secureKey));
             var credentials = new SigningCredentials(symmetricSecurityKey, SecurityAlgorithms.HmacSha256Signature);
             var header = new JwtHeader(credentials);
@@ -19,8 +18,7 @@ namespace CollegeNetworkBackend1.Helpers
             return new JwtSecurityTokenHandler().WriteToken(securityToken);
         }
 
-        public JwtSecurityToken verify(string jwt)
-        {
+        public JwtSecurityToken verify(string jwt) {
             var tokenHandler = new JwtSecurityTokenHandler();
             var key = Encoding.ASCII.GetBytes(secureKey);
             
