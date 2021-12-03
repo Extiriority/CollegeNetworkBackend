@@ -8,10 +8,9 @@ The front-end repository can be found at
 
 ## Goals
 
-* Interconnect and build a relationship with other students and professors in the same field.
-* Create an environment in which you can easily; message each other with the same interest, search for future related events,
-learn more in the same field and find easily new people.
-* Transfer your relationship with other students into a more deeper connection outside of college in an accelerated speed.
+* Interconnect and build relationships with other students and professors in the same field.
+* Create an environment where you can easily send messages to each other with similar interests, search for future related events, learn more in the same field and easily find new people.
+* Accelerate your relationship with other students into a deeper connection outside of college.
 
 ## Development environment set-up
 
