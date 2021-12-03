@@ -6,7 +6,7 @@ this repository contains the API which is responsible for all functionality.
 The front-end repository can be found at
 [CollegeNetworkFrontend](https://github.com/Extiriority/CollegeNetworkFrontend).
 
-## Objectives
+## Goals
 
 * Interconnect and build a relationship with other students and professors in the same field.
 * Create an environment in which you can easily; message each other with the same interest, search for future related events,
