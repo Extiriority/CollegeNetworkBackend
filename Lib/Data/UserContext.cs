@@ -1,12 +1,6 @@
 ﻿using CollegeNetworkBackend1.Lib.Logic.User;
 using Microsoft.EntityFrameworkCore;
 
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using CollegeNetworkBackend1.Lib.Logic.User;
-
 namespace CollegeNetworkBackend1.Lib.Data
 {
     public class UserContext: DbContext
