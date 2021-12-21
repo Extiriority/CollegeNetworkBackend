@@ -34,7 +34,12 @@ namespace CollegeNetworkBackend1
             services.AddDbContext<UserContext>(opt => opt.UseNpgsql(Configuration.GetConnectionString("Default")));
             
             services.AddControllers();
-
+            
+            services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1", new OpenApiInfo() { Title = "CollegeNetworkBackend", Version = "v1" });
+            });
+            
             services.AddScoped<IUserRepository, UserRepository>();
             services.AddScoped<JwtService>();
         }
@@ -45,6 +50,8 @@ namespace CollegeNetworkBackend1
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
+                app.UseSwagger();
+                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "CollegeNetworkBackend v1"));
             }
 
             app.UseHttpsRedirection();

@@ -15,7 +15,7 @@ namespace CollegeNetworkBackend1.Controllers
         private readonly JwtService _jwtService;
 
         public AuthController(IUserRepository repository, JwtService jwtService) {
-            _repository = repository;
+            _repository = repository;   
             _jwtService = jwtService;
         }
         
@@ -34,11 +34,12 @@ namespace CollegeNetworkBackend1.Controllers
         public IActionResult login(LoginDto dto) {
             var user = _repository.getByEmail(dto.email);
 
-            if (user == null) return BadRequest(new { message = "Invalid credentials" });
-            
-            if (!BCrypt.Net.BCrypt.Verify(dto.password, user.password)) {
+            if (user == null) 
                 return BadRequest(new { message = "Invalid credentials" });
-            }
+            
+            if (!BCrypt.Net.BCrypt.Verify(dto.password, user.password)) 
+                return BadRequest(new { message = "Invalid credentials" });
+            
 
             var jwt = _jwtService.generate(user.id);
             
