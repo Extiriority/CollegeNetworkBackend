@@ -4,10 +4,24 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 namespace CollegeNetworkBackend1.Migrations
 {
-    public partial class CreatUsersTable : Migration
+    public partial class CreateNetworkTable : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.CreateTable(
+                name: "posts",
+                columns: table => new
+                {
+                    post_id = table.Column<int>(nullable: false)
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
+                    user_id = table.Column<int>(nullable: false),
+                    content = table.Column<string>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_posts", x => x.post_id);
+                });
+
             migrationBuilder.CreateTable(
                 name: "users",
                 columns: table => new
@@ -37,6 +51,9 @@ namespace CollegeNetworkBackend1.Migrations
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.DropTable(
+                name: "posts");
+
             migrationBuilder.DropTable(
                 name: "users");
         }

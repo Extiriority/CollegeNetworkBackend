@@ -19,7 +19,25 @@ namespace CollegeNetworkBackend1.Migrations
                 .HasAnnotation("ProductVersion", "3.1.10")
                 .HasAnnotation("Relational:MaxIdentifierLength", 63);
 
-            modelBuilder.Entity("CollegeNetworkBackend.Lib.Logic.User.User", b =>
+            modelBuilder.Entity("CollegeNetworkBackend1.Lib.Logic.Post.Post", b =>
+                {
+                    b.Property<int>("post_id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer")
+                        .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
+
+                    b.Property<string>("content")
+                        .HasColumnType("text");
+
+                    b.Property<int>("user_id")
+                        .HasColumnType("integer");
+
+                    b.HasKey("post_id");
+
+                    b.ToTable("posts");
+                });
+
+            modelBuilder.Entity("CollegeNetworkBackend1.Lib.Logic.User.User", b =>
                 {
                     b.Property<int>("id")
                         .ValueGeneratedOnAdd()

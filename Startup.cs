@@ -41,6 +41,7 @@ namespace CollegeNetworkBackend1
             });
             
             services.AddScoped<IUserRepository, UserRepository>();
+            services.AddScoped<IPostRepository, PostRepository>();
             services.AddScoped<JwtService>();
         }
 

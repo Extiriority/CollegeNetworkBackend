@@ -10,8 +10,8 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace CollegeNetworkBackend1.Migrations
 {
     [DbContext(typeof(UserContext))]
-    [Migration("20211029191550_CreatUsersTable")]
-    partial class CreatUsersTable
+    [Migration("20220112225038_CreateNetworkTable")]
+    partial class CreateNetworkTable
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -20,6 +20,24 @@ namespace CollegeNetworkBackend1.Migrations
                 .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn)
                 .HasAnnotation("ProductVersion", "3.1.10")
                 .HasAnnotation("Relational:MaxIdentifierLength", 63);
+
+            modelBuilder.Entity("CollegeNetworkBackend1.Lib.Logic.Post.Post", b =>
+                {
+                    b.Property<int>("post_id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer")
+                        .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
+
+                    b.Property<string>("content")
+                        .HasColumnType("text");
+
+                    b.Property<int>("user_id")
+                        .HasColumnType("integer");
+
+                    b.HasKey("post_id");
+
+                    b.ToTable("posts");
+                });
 
             modelBuilder.Entity("CollegeNetworkBackend1.Lib.Logic.User.User", b =>
                 {

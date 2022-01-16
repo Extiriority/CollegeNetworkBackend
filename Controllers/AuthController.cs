@@ -64,6 +64,14 @@ namespace CollegeNetworkBackend1.Controllers
                 return Unauthorized();
             }
         }
+        
+        [HttpGet("user/{id:int}")]
+        public IActionResult user(int id) {
+            
+            var user = _repository.getById(id);
+
+            return Ok(user);
+        }
 
         [HttpPost("logout")]
         public IActionResult logout() {

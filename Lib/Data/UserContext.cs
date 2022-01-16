@@ -1,4 +1,5 @@
-﻿using CollegeNetworkBackend1.Lib.Logic.User;
+﻿using CollegeNetworkBackend1.Lib.Logic.Post;
+using CollegeNetworkBackend1.Lib.Logic.User;
 using Microsoft.EntityFrameworkCore;
 
 namespace CollegeNetworkBackend1.Lib.Data
@@ -10,6 +11,7 @@ namespace CollegeNetworkBackend1.Lib.Data
 
         }
         public DbSet<User> users { get; set; }
+        public DbSet<Post> posts { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
